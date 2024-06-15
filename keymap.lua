@@ -79,6 +79,11 @@ function M.setup(config)
       mods = 'CMD',
       action = act.ReloadConfiguration
     },
+    {
+      key = 'q',
+      mods = 'CMD',
+      action = act.QuitApplication
+    },
   }
 
   for i = 1, 8 do
@@ -91,6 +96,10 @@ function M.setup(config)
   end
 
   config.keys = keys
+
+  -- This solves macos mission control lag temporarily
+  -- https://github.com/wez/wezterm/issues/2669
+  config.send_composed_key_when_right_alt_is_pressed = false
   return config
 end
 
