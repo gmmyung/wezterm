@@ -46,12 +46,12 @@ function M.setup(config)
     },
     {
       key = 's',
-      mods = 'CMD',
+      mods = 'CMD | SHIFT',
       action = act.SplitVertical { domain = 'CurrentPaneDomain' }
     },
     {
       key = 'v',
-      mods = 'CMD',
+      mods = 'CMD | SHIFT',
       action = act.SplitHorizontal { domain = 'CurrentPaneDomain' }
     },
     {
@@ -83,6 +83,16 @@ function M.setup(config)
       key = 'q',
       mods = 'CMD',
       action = act.QuitApplication
+    },
+    {
+      key = 'v',
+      mods = 'CMD',
+      action = act.PasteFrom 'Clipboard',
+    },
+    {
+      key = 'c',
+      mods = 'CMD',
+      action = act.CopyTo 'Clipboard',
     },
   }
 
